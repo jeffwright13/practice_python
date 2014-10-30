@@ -7,12 +7,18 @@ Ask the user for a number. Depending on whether the number is even or odd, print
 
 Extras:
 
-If the number is a multiple of 4, print out a different message.
-Ask the user for two numbers: one number to check (call it num) and one number to divide by (check). If check divides evenly into num, tell that to the user. If not, print a different appropriate message.
+(1) If the number is a multiple of 4, print out a different message.
+(2) Ask the user for two numbers: one number to check (call it num) and one number to divide by (check). If check divides evenly into num, tell that to the user. If not, print a different appropriate message.
 '''
 
 def main():
-	pass
-		
+	str = input("Please enter an integer: ")
+	num = int(float(str))  # force the input to an int
+
+	if num % 2 == 0:
+		print ('Your number is even.')
+	else:
+		print ('Your number is odd.')
+
 if __name__ == "__main__":
 	main()
