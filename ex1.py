@@ -17,7 +17,8 @@ from datetime import date
 def main():
 	name = get_name()
 	age = get_age()
-	year = get_year(int(age))
+	bday_yet = birthday_yet()
+	year = get_year(int(age), bday_yet)
 	
 	if year == 'greater':
 		print ("You're already 100 years old or greater! Congrats!")
@@ -31,14 +32,25 @@ def get_name():
 def get_age():
 	return (input('Please enter your age:'))
 	
-def get_year(a):
+def birthday_yet():
+	ans = input('Have you had your birthday yet this year (y/n)?')
+	if 'y' in ans.lower():
+		return True
+	else:
+		return False
+
+def get_year(a, b):
 	assert a >= 0, "Age is not allowed to be less than zero."
 	if a >= 100:
 		return 'greater'
 	else:
 		today = str(date.today()).split('-')
-		this_year = int(today[0])
-		return this_year + (100 - a)
+		if bool(b) == True:
+			this_year = int(today[0])
+			return (this_year + (100 - a))
+		else:
+			this_year = int(today[0])
+			return (this_year + (99 - a))
 		
 if __name__ == "__main__":
 	main()
