@@ -12,13 +12,19 @@ Extras:
 '''
 
 def main():
+	# Get user input
 	str = input("Please enter an integer: ")
 	num = int(float(str))  # force the input to an int
 
+	# Part the first
 	if num % 2 == 0:
 		print ('Your number is even.')
 	else:
 		print ('Your number is odd.')
+
+	# Part the second
+	if num % 4 == 0:
+		print ('Your number is a multiple of 4.')
 
 if __name__ == "__main__":
 	main()
