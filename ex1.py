@@ -37,10 +37,8 @@ def get_year(a):
 		return 'greater'
 	else:
 		today = str(date.today()).split('-')
-		# print (today)
-		# data of interest is in today[0]
-		return None
-		# Note: need to figure out algorithm
+		this_year = int(today[0])
+		return this_year + (100 - a)
 		
 if __name__ == "__main__":
 	main()
