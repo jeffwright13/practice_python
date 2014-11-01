@@ -13,8 +13,18 @@ Write this in one line of Python.
 Ask the user for a number and return a list that contains only elements from the original list a that are smaller than that number given by the user.
 '''
 
+def less_than(lst=[], num=0):
+	lst2 = []
+	for elem in lst:
+		if elem < num:
+			lst2.append(elem)
+	return lst2
+
 def main():
-	pass
+	a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+	less_than_5 = less_than(a, 5)
+	for elem in less_than_5:
+		print (elem)
 		
 if __name__ == "__main__":
 	main()
