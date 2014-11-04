@@ -7,7 +7,11 @@ the even elements of this list in it.
 '''
 
 def main():
-	pass
+	a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+	
+	e = [elem for elem in a if a.index(elem) % 2 == 0]
+	
+	print ("Even list is: {}".format(e)) 
 		
 if __name__ == "__main__":
 	main()
