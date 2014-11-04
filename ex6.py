@@ -7,7 +7,13 @@ forwards and backwards.)
 '''
 
 def main():
-	pass
+	str = input ("Please enter a string to check for palindromicity: ")
+	is_it = (str.strip()).lower()
+	print (is_palindrome(is_it))
+
+def is_palindrome(list):
+	list_rev = list[::-1]
+	return (list_rev == list)
 		
 if __name__ == "__main__":
 	main()
