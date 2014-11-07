@@ -18,6 +18,7 @@ def play_game():
 	p2_s = input('Player 2: Rock, paper or scissors (r/p/s)? ')
 	p2 = p2_s.strip().lower()[0]
 	
+	# determine who is the winner
 	if p1 == p2: return 'tie'
 	elif p1 == 'r':
 		if p2 == 'p': return 'P2'
@@ -29,12 +30,6 @@ def play_game():
 		if p2 == 'r': return 'P2'
 		else: return 'P1'
 		
-def show_stats():
-	pass
-
-def update_stats(w):
-	pass
-
 def main():
 	# get input from players
 	num_s = input('How many rounds would you like to play? ')
@@ -42,16 +37,18 @@ def main():
 	if num <0: sys.exit()
 	
 	# main execution loop
-	i = 0
+	i = p1_score = p2_score = 0
 	while i < num:
 		winner = play_game()
-		update_stats(winner)
+		if winner == 'P1': p1_score +=1
+		elif winner == 'P2': p2_score +=1
+		else: pass
 		i += 1
 		
 	# game over; see if player wants to play again
-	print('Thanks for playing!')
-	show_stats()
-	again = input('Would you like to play more? ')
+	print('\nThanks for playing!')
+	print ("\nFinal score: P1 {} P2 {}\n".format(p1_score, p2_score))
+	again = input('Would you like to play some more? ')
 	if "y" in again.strip().lower():
 		main()
 	else:
