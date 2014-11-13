@@ -12,38 +12,16 @@ Extra: Randomly generate two lists to test this
 '''
 
 def main():
-	# Exercise 10 given lists for testing
+	import random
+ 
+	a = random.sample(range(1,30), 12)
+	b = random.sample(range(1,30), 16)
+	
 	a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 	b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-	l1 = common(a, b)
-	print (l1)
 	
-	# Whole 'notha level: random lists (of random length)
-	list1, list2 = generate_random_lists()
-	l2 = common(list1, list2)
-	print (l2)
 	
-
-def generate_random_lists():
-	'''Generates two random lists, containing random ints in
-	range (0,100] and with random lengths (0,25)'''
-	
-	import random
-	i = 0
-	lista = listb = []
-	lista_len = random.randint(0, 25)
-	random.seed()
-	listb_len = random.randint(0, 25)
-	while i < lista_len:
-		lista.append(random.randint(0, 100))
-		i += 1
-	while i < listb_len:
-		listb.append(random.randint(0, 100))
-		i +=1 
-	return lista, listb
-
-def common(l1, l2):
-	return list(set([elem for elem in l1 if elem in l2]))
+	result = [i for i in a if i in b]
 
 if __name__ == "__main__":
 	main()
