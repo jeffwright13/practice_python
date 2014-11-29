@@ -9,7 +9,9 @@ def main():
 	print (reverse(sentence))
 
 def reverse(str):
-	pass
+	string_list = str.split() # split string on whitespace
+	string_list.reverse()
+	return ' '.join(string_list)
 	
 if __name__ == "__main__":
 	main()
