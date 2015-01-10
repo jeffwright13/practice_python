@@ -5,12 +5,24 @@ Write a password generator in Python. Be creative with how you generate password
 
 Extra: Ask the user how strong they want their password to be. For weak passwords, pick a word or two from a list.
 '''
+import random
+import string
 
 def main():
-	pass
+	length = input('Enter length:')
+	password = generate_password(length)
+	print (password)
 	
-def generate_password(seed, strength):
-	pass
+def generate_password(length):
+	letters = string.letters
+	digits = string.digits
+	chars = letters + digits
+	password = ''
+
+	for k in range(0, length):
+		password += str(random.choice(chars))
+	
+	return password
 	
 if __name__ == "__main__":
 	main()
